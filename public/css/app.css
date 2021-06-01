@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+button, input {
+  transition: all .25s;
+  background: #3333ad;
+  outline: none;
+  border: none;
+  background: none; }
+
+a {
+  text-decoration: none;
+  color: white; }
+
+:root {
+  font-family: 'Open Sans', sans-serif;
+  color: white; }
+
+body {
+  height: 100%;
+  width: 100%;
+  background: #020c2f; }
+
+#wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%; }
+  #wrapper .right {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+
+.stars-outer {
+  width: fit-content;
+  position: relative;
+  display: inline-block; }
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0; }
+
+.stars-outer::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ccc; }
+
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #f8ce0b; }
+
+#sidebar {
+  padding: 0px 20px;
+  height: 100%;
+  min-width: 250px;
+  max-width: 250px; }
+  #sidebar__logo {
+    object-fit: contain;
+    height: 100px;
+    margin: 30px 0; }
+  #sidebar__navigations {
+    margin-top: 15px;
+    font-weight: 550; }
+    #sidebar__navigations ul li {
+      padding: 10px 0;
+      margin: 2px 0px;
+      display: flex;
+      align-items: center;
+      width: 80%;
+      cursor: pointer;
+      font-size: 1.3rem;
+      transition: all 0.2s; }
+      #sidebar__navigations ul li i {
+        font-size: 1.6rem;
+        margin-right: 15px; }
+      #sidebar__navigations ul li:hover {
+        color: #3031af; }
+  #sidebar__categories {
+    margin-top: 15px;
+    font-weight: 550; }
+    #sidebar__categories ul {
+      display: flex;
+      flex-direction: column; }
+      #sidebar__categories ul a {
+        margin: 3px 0;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 550;
+        font-size: 1.2rem;
+        padding: 10px;
+        background: #3333ad;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all .2s; }
+        #sidebar__categories ul a:hover {
+          background: #4a6ac9;
+          color: white; }
+  #sidebar .sidebar__nav__title {
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem; }
+
+#header {
+  height: 70px;
+  width: 100%;
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  #header .search-container {
+    display: flex;
+    align-items: center;
+    background: #0c154c;
+    border-radius: 8px;
+    padding: 8px 20px;
+    max-width: 500px;
+    width: 100%; }
+    #header .search-container i {
+      margin-right: 10px;
+      cursor: pointer;
+      font-size: 1.2rem; }
+    #header .search-container input {
+      font-size: 1.1rem;
+      color: white;
+      height: 30px;
+      width: 100%;
+      font-weight: 550;
+      letter-spacing: 0.8px; }
+  #header .header__nav {
+    display: flex;
+    align-items: center; }
+    #header .header__nav__notifications {
+      margin-right: 40px; }
+      #header .header__nav__notifications i {
+        cursor: pointer;
+        font-size: 1.25rem;
+        position: relative;
+        color: rgba(255, 255, 255, 0.7); }
+        #header .header__nav__notifications i:hover {
+          color: white; }
+        #header .header__nav__notifications i span {
+          background: #ff2600;
+          padding: 5px;
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          border-radius: 100%;
+          font-size: 1.05rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: -10px;
+          right: -20px; }
+    #header .header__nav__profile img {
+      object-fit: contain;
+      border-radius: 100%;
+      background: white;
+      height: 50px; }
+
+#main {
+  padding: 40px;
+  border-top-left-radius: 30px;
+  background: #0c154c;
+  min-height: calc(100vh - 70px);
+  width: 100%; }
+
+#main .feeds-slider {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  position: relative; }
+  #main .feeds-slider .feed {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background: #3333ad;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s; }
+    #main .feeds-slider .feed__title {
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 550;
+      font-size: 1.2rem; }
+    #main .feeds-slider .feed__desc {
+      max-width: 450px;
+      font-size: 4rem;
+      font-weight: 550;
+      margin: 20px 0px 15px 0px; }
+    #main .feeds-slider .feed__game {
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: 550;
+      margin-bottom: 20px; }
+      #main .feeds-slider .feed__game img {
+        object-fit: contain;
+        height: 30px;
+        border-radius: 5px;
+        margin-right: 10px; }
+      #main .feeds-slider .feed__game__point {
+        width: 7px;
+        height: 7px;
+        border-radius: 100%;
+        background: white;
+        margin: 0 10px;
+        margin-top: 3px; }
+    #main .feeds-slider .feed__bonus-claim {
+      padding-top: 20px; }
+      #main .feeds-slider .feed__bonus-claim a {
+        text-decoration: none;
+        padding: 15px 25px;
+        font-size: 1.2rem;
+        background: white;
+        color: #3333ad;
+        font-weight: 600;
+        border-radius: 15px;
+        transition: all .2s; }
+        #main .feeds-slider .feed__bonus-claim a i {
+          margin-left: 10px; }
+  #main .feeds-slider .feed.active {
+    opacity: 1; }
+
+#main .new-casinos__title {
+  font-weight: 550;
+  font-size: 1.5rem;
+  margin: 40px 10px;
+  color: rgba(255, 255, 255, 0.7); }
+
+#main .new-casinos__games {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px; }
+  #main .new-casinos__games__game {
+    background: #020c2f;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px; }
+    #main .new-casinos__games__game__header {
+      display: flex; }
+      #main .new-casinos__games__game__header img {
+        object-fit: cover;
+        height: 50px;
+        width: 50px;
+        border-radius: 5px;
+        margin-right: 15px; }
+      #main .new-casinos__games__game__header__middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1; }
+        #main .new-casinos__games__game__header__middle p {
+          margin-bottom: 5px;
+          font-weight: 550;
+          font-size: 1.1rem; }
+        #main .new-casinos__games__game__header__middle__stars i {
+          color: yellow; }
+      #main .new-casinos__games__game__header__right i {
+        color: rgba(255, 255, 255, 0.7); }
+        #main .new-casinos__games__game__header__right i:hover {
+          color: white; }
+    #main .new-casinos__games__game__bonuses {
+      display: flex;
+      margin: 30px 0;
+      align-items: center;
+      border-radius: 10px;
+      overflow: hidden; }
+      #main .new-casinos__games__game__bonuses__bonus {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px;
+        text-align: center;
+        background: rgba(0, 120, 72, 0.6);
+        color: rgba(255, 255, 255, 0.7); }
+        #main .new-casinos__games__game__bonuses__bonus p {
+          font-size: .7rem;
+          text-transform: uppercase; }
+        #main .new-casinos__games__game__bonuses__bonus span {
+          font-weight: 550;
+          font-size: 1.4rem; }
+      #main .new-casinos__games__game__bonuses__bonus.spin {
+        color: white;
+        background: #0c154c; }
+    #main .new-casinos__games__game__claim a button {
+      border-radius: 10px;
+      padding: 20px 15px;
+      font-size: 1.2rem;
+      font-weight: 550;
+      width: 100%;
+      color: white;
+      background: #0c154c;
+      cursor: pointer; }
+      #main .new-casinos__games__game__claim a button:hover {
+        background: #3333ad; }
