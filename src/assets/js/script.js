@@ -96,8 +96,6 @@ const newCasinos = [
 
 
 $(document).ready(() => {
-    console.log('wooorks');
-    console.log(feeds);
     displayFeedImages();
     feedSlider();
     displayNewCasinoGames();
@@ -107,16 +105,16 @@ $(document).ready(() => {
 const feedSlider = () => {
     const pause = 8000;
     let index = 0;
-    let feed = $('.feeds-slider .feed');
+    let feed = $('.feeds-slider .feed'); // array of all feeds
 
     setInterval(() => {
-        feed.map(el => $(feed[el]).removeClass('active'));
-        if (index < feed.length - 1) {
-            index++
-        } else {
-            index = 0;
+        feed.map(el => $(feed[el]).removeClass('active')); // go trough every feed and remove class 'active' from element it has one;
+        if (index < feed.length - 1) { // check if index is less than feed length;
+            index++ // add 1 to index;
+        } else { // if index is more than feed length;
+            index = 0; // set index to 0 so we don't get value undefined when index will be bigger than feed length
         }
-        $(feed[index]).addClass('active')
+        $(feed[index]).addClass('active') // add class 'active' to specific feed;
     }, pause)
 
 }
@@ -181,12 +179,14 @@ const displayNewCasinoGames = () => {
         getRating(casino.rating)
     })
 }
+// Ratings for casino games;
 
+// rating parameter takes value which is data type of double. Ex. 4.1;
 function getRating(rating) {
-    if (!rating) return;
-    const starsTotal = 5;
+    if (!rating) return; // if there is not rating, we return nothing;
+    const starsTotal = 5; // total rating stars;
 
-    const starPercentage = (rating / starsTotal) * 100;
-    const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
-    $(`.${rating}.stars-inner`).css('width', starPercentageRounded)
+    const starPercentage = (rating / starsTotal) * 100; // get percentage width;
+    const starPercentageRounded = `${Math.round(starPercentage)}%`; // round percentage width, because if we have for Ex. starPercentage of 68.4, we round it to 68;
+    $(`.${rating}.stars-inner`).css('width', starPercentageRounded) // set star color width of our star percentage we calculated;
 }
