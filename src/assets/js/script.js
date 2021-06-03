@@ -187,8 +187,4 @@ function getRating(rating) {
     const starPercentage = (rating / starsTotal) * 100; // get percentage width;
     const starPercentageRounded = `${Math.round(starPercentage)}%`; // round percentage width, because if we have for Ex. starPercentage of 68.4, we round it to 68;
     $(`.${rating}.stars-inner`).css('width', starPercentageRounded) // set star color width of our star percentage we calculated;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 51b949f7a9a89eb11077a8399b46a0e897f67dcf
